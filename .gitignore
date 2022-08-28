@@ -1,0 +1,7 @@
+/MedicalIS_client/dist/
+/MedicalIS_client/nbproject/private/
+/MedicalIS_server/nbproject/private/
+/shared_lib/nbproject/private/
+/MedicalIS_client/target
+/MedicalIS_server/target
+/shared_lib/target

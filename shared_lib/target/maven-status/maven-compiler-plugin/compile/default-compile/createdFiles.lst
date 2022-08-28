@@ -1,0 +1,17 @@
+npproj\shared_lib\communication\ResponseType.class
+npproj\shared_lib\communication\Request.class
+npproj\shared_lib\communication\Operations.class
+npproj\shared_lib\domain\VrsteAnaliza.class
+npproj\shared_lib\communication\Receiver.class
+npproj\shared_lib\domain\Uput.class
+npproj\shared_lib\communication\Sender.class
+npproj\shared_lib\domain\Analiza.class
+npproj\shared_lib\domain\GeneralDObject.class
+npproj\shared_lib\domain\HronicnaDijagnoza.class
+npproj\shared_lib\domain\Rezultat.class
+npproj\shared_lib\domain\Lekar.class
+npproj\shared_lib\domain\KartonPacijenta.class
+npproj\shared_lib\domain\KrvnaGrupa.class
+npproj\shared_lib\communication\Response.class
+npproj\shared_lib\domain\Laborant.class
+npproj\shared_lib\domain\VrstaUzorka.class
