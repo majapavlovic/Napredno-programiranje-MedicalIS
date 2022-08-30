@@ -4,7 +4,7 @@
  */
 package npproj.medicalis_client.main;
 
-import view.FrmLogin;
+import npproj.medicalis_client.view.FrmLogin;
 
 
 /**

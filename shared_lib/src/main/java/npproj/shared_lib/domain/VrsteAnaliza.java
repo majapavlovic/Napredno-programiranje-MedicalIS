@@ -21,7 +21,7 @@ public class VrsteAnaliza implements Serializable {
         analize.add("Mikoloska");
         analize.add("Paraziti");
         analize.add("Virusoloska");
-        //analize.add("Bakterioloska");
+        analize.add("Mikobakterioloska");
     }
 
     public List<String> getAnalize() {

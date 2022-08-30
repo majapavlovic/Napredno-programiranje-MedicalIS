@@ -21,10 +21,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SpringLayout;
 import npproj.medicalis_client.thread.ClientThread;
-import view.FrmKreiranjeUputa;
-import view.FrmLogin;
-import view.FrmMain_Laborant;
-import view.FrmMain_Lekar;
+import npproj.medicalis_client.view.FrmKreiranjeUputa;
+import npproj.medicalis_client.view.FrmLogin;
+import npproj.medicalis_client.view.FrmMain_Laborant;
+import npproj.medicalis_client.view.FrmMain_Lekar;
 
 /**
  *
