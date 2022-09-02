@@ -9,13 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa iz koje se citaju vrste mogucih laboratorijskih analiza
  *
  * @author Maja
  */
 public class VrsteAnaliza implements Serializable {
 
+    /**
+     * Lista mogucih analiza
+     */
     public List<String> analize = new ArrayList();
 
+    /**
+     * Konstuktor koji populise listu analiza
+     */
     public VrsteAnaliza() {
         analize.add("Bakterioloska");
         analize.add("Mikoloska");
@@ -24,6 +31,11 @@ public class VrsteAnaliza implements Serializable {
         analize.add("Mikobakterioloska");
     }
 
+    /**
+     * Vraca listu analiza
+     *
+     * @return List{@literal <}String{@literal >}
+     */
     public List<String> getAnalize() {
         return analize;
     }

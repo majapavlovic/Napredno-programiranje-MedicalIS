@@ -11,15 +11,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Klasa koja predstavlja sendera, sluzi za slanje poruka preko soketa
  * @author Maja
  */
 public class Sender {
+    /**
+     * Soket za slanje poruka
+     */
     private Socket socket;
-
+    /**
+     * Parametarki konstruktor postavlja vrednost soketa
+     * @param socket soket
+     */
     public Sender(Socket socket) {
         this.socket = socket;
     }
+    /**
+     * Metoda koja sluzi za slanje poruka preko soketa
+     * @param object objekat koji se salje preko soketa
+     * @throws Exception greska u slanju poruke
+     */
     public void send(Object object) throws Exception {
         ObjectOutputStream out = null;
         try {

@@ -5,6 +5,7 @@
 package npproj.shared_lib.communication;
 
 /**
+ * Enum tip koji predstavlja tip responsa
  *
  * @author Maja
  */

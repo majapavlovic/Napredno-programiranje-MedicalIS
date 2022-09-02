@@ -122,23 +122,37 @@ public class Analiza implements GeneralDObject, Serializable {
     public String getAtrValue() {
         return sifraAnalize + ", '" + vrstaAnalize + "', '" + vrstaUzorka + "', " + uput.getSifraUputa();
     }
-
+    /**
+     * Vraca vrednosti atributa sifraAnalize, vrstaAnalize, vrstaUzorka i sifru uputa kao string
+     * @return String u obliku "sifra_analize = sifraAnalize, vrsta_analize=vrstaAnalize, vrsta_uzorka=vrstaUzorka, sifra_uputa=sifraUputa"
+     */
     @Override
     public String setAtrValue() {
         return "sifra_analize = " + sifraAnalize + ", vrsta_analize='" + 
                 vrstaAnalize + "', vrsta_uzorka='" + vrstaUzorka + "', sifra_uputa=" + uput.getSifraUputa();
     }
-
+    /**
+     * Vraca naziv klase Analiza
+     * @return naziv klase kao String
+     */
     @Override
     public String getClassName() {
         return "Analiza";
     }
-
+    /**
+     * Vraca sifru uputa u Stringu koji se koristi za upit u bazu podataka
+     * @return String u obliku "sifra_uputa=username"
+     */
     @Override
     public String getWhereCondition() {
         return "sifra_uputa = " + uput.getSifraUputa();
     }
-
+    /**
+     * Kreira i vraca novi objekat klase Analiza
+     * @param rs objekat ResultSet iz kod se izvlace vrednosti atributa nove Analize
+     * @return GeneralDObjekat objekat klase koja implementira interfejs GeneralDObjekat
+     * @throws SQLException ukoliko je doslo do SQL greske
+     */
     @Override
     public GeneralDObject getNewRecord(ResultSet rs) throws SQLException {
         return new Analiza(
@@ -147,12 +161,20 @@ public class Analiza implements GeneralDObject, Serializable {
                 rs.getString("vrsta_uzorka"),
                 new Uput(rs.getLong("sifra_uputa")));
     }
-
+    
+    /**
+     * Vraca String koji se koristi kao polje u bazi podataka
+     * @return String
+     */
     @Override
     public String getFields() {
         return "sifra_analize";
     }
-
+    
+    /**
+     * Vraca String koji sadrzi atribute sifraAnalize, vrstaAnalize, vrstaUzorka
+     * @return String u obliku "sifra_analize = sifraAnalize, vrsta_analize='vrstaAnalize', vrsta_uzorka='vrstaUzorka'"
+     */
     @Override
     public String toString() {
         return "sifra_analize = " + sifraAnalize + ", vrsta_analize='" + 

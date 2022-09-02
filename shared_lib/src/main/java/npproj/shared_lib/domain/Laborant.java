@@ -162,7 +162,7 @@ public class Laborant implements Serializable, GeneralDObject {
     }
 
     /**
-     * Kreira i vraca novi objekat Laboranta
+     * Kreira i vraca novi objekat klase Laborant
      * @param rs objekat ResultSet iz kod se izvlace vrednosti atributa novog Laboranta
      * @return GeneralDObjekat objekat klase koja implementira interfejs GeneralDObjekat
      * @throws SQLException ukoliko je doslo do SQL greske

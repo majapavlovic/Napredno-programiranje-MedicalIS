@@ -10,13 +10,14 @@ import java.util.List;
 
 /**
  * Klasa iz koje se citaju vrste mogucih uzoraka za laboratorijske analize
+ *
  * @author Maja
  */
 public class VrstaUzorka implements Serializable {
-    
+
     /*
     * Lista vrsta uzoraka kao  lista Stringova
-    */
+     */
     List<String> uzorci = new ArrayList<>();
 
     /**
@@ -32,8 +33,10 @@ public class VrstaUzorka implements Serializable {
         uzorci.add("Bris rane(duboke)");
         uzorci.add("Bris površinske rane");
     }
+
     /**
      * Vraca listu uzorci
+     *
      * @return uzorci kao List{@literal <}String{@literal >}
      */
     public List<String> getUzorci() {

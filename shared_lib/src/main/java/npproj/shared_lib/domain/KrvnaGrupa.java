@@ -9,12 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa iz koje se citaju krvne grupe
  *
  * @author Maja
  */
 public class KrvnaGrupa implements Serializable {
+
+    /**
+     * Lista krvnih grupa
+     */
     public List<String> krvneGrupe = new ArrayList();
 
+    /**
+     * Konstruktor koji populise listu krvnih grupa
+     */
     public KrvnaGrupa() {
         krvneGrupe.add("A+");
         krvneGrupe.add("A-");
@@ -26,12 +34,12 @@ public class KrvnaGrupa implements Serializable {
         krvneGrupe.add("O-");
     }
 
+    /**
+     * Vraca listu krvnih grupa
+     *
+     * @return lista krvnih grupa Lista{@literal <}String{@literal >}
+     */
     public List<String> getKrvneGrupe() {
         return krvneGrupe;
     }
-
-    
-
-    
-   
 }
