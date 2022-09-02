@@ -8,16 +8,29 @@ import npproj.shared_lib.domain.GeneralDObject;
 import java.util.List;
 
 /**
- *
+ * Apstraktna klasa koja predstavlja apstraktnu sistemsku operaciju (SO) koju nasledjuju konkretne SO
  * @author Maja
  */
 public abstract class AbstractSO {
-
+    
+    /**
+     * Rezultat SO, objekat klase GeneralDObject
+     */
     GeneralDObject result;
+    /**
+     * Rezultat SO, objekat klase Object
+     */
     Object result1;
-    boolean resultB;
-    List<GeneralDObject> lista;
+    /**
+     * Lista objekata GeneralDObject 
+     */
 
+    /**
+     * Funkcija za izvrsavanje sistemske operacije
+     * Izvrsava se provera preduslova, zapocinje transakcija, izvrsava SO i commit-uje transakcija
+     * @param param parametar transakcije, GeneralDObject
+     * @throws Exception Greska pri izvrsavanju SO
+     */
     public void execute(GeneralDObject param) throws Exception {
         try {
             precondition(param);
@@ -32,7 +45,7 @@ public abstract class AbstractSO {
             throw new Exception(exception);
         }
     }
-
+    
     protected abstract void precondition(GeneralDObject param) throws Exception;
 
     protected abstract void executeOperation(GeneralDObject param) throws Exception;
@@ -48,15 +61,6 @@ public abstract class AbstractSO {
 
     public GeneralDObject getResult() {
         return result;
-    }
-
-
-    public boolean isResultB() {
-        return resultB;
-    }
-
-    public List<GeneralDObject> getLista() {
-        return lista;
     }
 
     public Object getResult1() {

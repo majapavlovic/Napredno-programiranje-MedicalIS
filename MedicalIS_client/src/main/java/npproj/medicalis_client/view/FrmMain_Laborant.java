@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package npproj.medicalis_client.view;
 
 import npproj.shared_lib.communication.Response;
 import npproj.shared_lib.communication.ResponseType;
@@ -491,7 +491,6 @@ public class FrmMain_Laborant extends javax.swing.JFrame {
         txtAnaliza.setText(analiza.getVrstaAnalize());
 
         txtLekar.setText(uput.getLekar().getIme() + " " + uput.getLekar().getPrezime());
-
         if (rezultat != null && rezultat.getLaborant() != null) {
             txtLaborant.setText(rezultat.getLaborant().getIme() + " " + rezultat.getLaborant().getPrezime());
             txtDatuimRezultata.setText(rezultat.getDatumIzdavanja().toString());

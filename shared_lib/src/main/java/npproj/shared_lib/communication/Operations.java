@@ -7,7 +7,7 @@ package npproj.shared_lib.communication;
 import java.io.Serializable;
 
 /**
- *
+ * Klasa koja predstavlja sifarnik za operacije u komunikaciji izmedju servera i klijenta
  * @author Maja
  */
 public class Operations implements Serializable{

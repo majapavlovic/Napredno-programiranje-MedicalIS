@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package npproj.medicalis_client.view;
 
 import npproj.shared_lib.communication.Response;
 import npproj.shared_lib.communication.ResponseType;

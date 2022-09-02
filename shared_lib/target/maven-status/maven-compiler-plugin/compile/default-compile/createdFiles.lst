@@ -7,7 +7,6 @@ npproj\shared_lib\domain\Uput.class
 npproj\shared_lib\communication\Sender.class
 npproj\shared_lib\domain\Analiza.class
 npproj\shared_lib\domain\GeneralDObject.class
-npproj\shared_lib\domain\HronicnaDijagnoza.class
 npproj\shared_lib\domain\Rezultat.class
 npproj\shared_lib\domain\Lekar.class
 npproj\shared_lib\domain\KartonPacijenta.class
