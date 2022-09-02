@@ -491,7 +491,6 @@ public class FrmMain_Laborant extends javax.swing.JFrame {
         txtAnaliza.setText(analiza.getVrstaAnalize());
 
         txtLekar.setText(uput.getLekar().getIme() + " " + uput.getLekar().getPrezime());
-
         if (rezultat != null && rezultat.getLaborant() != null) {
             txtLaborant.setText(rezultat.getLaborant().getIme() + " " + rezultat.getLaborant().getPrezime());
             txtDatuimRezultata.setText(rezultat.getDatumIzdavanja().toString());

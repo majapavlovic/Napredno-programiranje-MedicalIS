@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 /**
  * Klasa koja predstavlja laboratorijsku analizu
+ * Laboratorijske analize vezane su za upute (na jednom uputu moze se nalaziti vise analiza)
  * @author Maja
  */
 public class Analiza implements GeneralDObject, Serializable {

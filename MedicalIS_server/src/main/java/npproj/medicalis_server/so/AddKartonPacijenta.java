@@ -10,20 +10,28 @@ import npproj.shared_lib.domain.KartonPacijenta;
 import java.text.SimpleDateFormat;
 
 /**
- *
+ * Klasa koja predstavlja sistemsku operaciju za dodavanje kartona pacijenta u bazu podataka
  * @author Maja
  */
 public class AddKartonPacijenta extends AbstractSO {
 
-   BrokerBazePodataka_impl bbp;
-   GeneralDObject result;
-   boolean resultB = false;
+    /**
+     * Objekat klase BrokerBazePodataka_impl
+     */
+    BrokerBazePodataka_impl bbp;
 
+    /**
+     * Konstruktor koji kreira novi objekat klase BrokerBazePodataka_impl i uspostavlja konekciju sa bazom podataka
+     */
     public AddKartonPacijenta() {
         bbp = new BrokerBazePodataka_impl();
         bbp.makeConnection();
     }
-
+    /**
+     * Metoda za proveru uslova za izvrsenje SO
+     * @param param objekat klase koja implementira GeneralDObject nad kojim se vrsi SO
+     * @throws Exception vraca gresku ako nisu ispunjeni zadati uslovi
+     */
     @Override
     protected void precondition(GeneralDObject param) throws Exception {
         if (param == null || !(param instanceof KartonPacijenta)) {
@@ -50,7 +58,11 @@ public class AddKartonPacijenta extends AbstractSO {
         }
         
     }
-
+    /**
+     * Metoda za izvrsavanje SO
+     * @param param objekat klase koja implementira GeneralDObject nad kojim se vrsi SO
+     * @throws Exception greska pri izvrsavanju SO
+     */
     @Override
     protected void executeOperation(GeneralDObject param) throws Exception {
 
@@ -59,12 +71,18 @@ public class AddKartonPacijenta extends AbstractSO {
         if(!b) throw new Exception("Neuspesno dodavanje kartona!");
            
     }
-
+    /**
+     * Metoda koja commit-uje(potvrdjuje) transakciju
+     * @throws Exception greska
+     */
     @Override
     protected void comitTransaction() throws Exception {
         bbp.commitTransation();
     }
-
+    /**
+     * Metoda koja vrsi rollback (povlacenje) transakcije
+     * @throws Exception greska
+     */
     @Override
     protected void rollbackTransaction() throws Exception {
         bbp.rollbackTransation();
