@@ -346,7 +346,7 @@ public class KartonPacijenta implements Serializable, GeneralDObject {
                 + "', datumrodjenja='" + ((datumRodjenja == null) ? "" : datumRodjenja.toString())
                 + "', adresa='" + adresa + "', kontakt_telefon='"
                 + kontaktTelefon + "', krvna_grupa='" + krvnaGrupa.toString()
-                + "', hronicne_dijagnoze'" + hronicneDijagnoze + "', lekar=" + lekar.getIme() + " " + lekar.getPrezime();
+                + "', hronicne_dijagnoze='" + hronicneDijagnoze + "', lekar=" + lekar.getIme() + " " + lekar.getPrezime();
     }
     /**
      * Vraca vrednosti atributa jmbg i lekar

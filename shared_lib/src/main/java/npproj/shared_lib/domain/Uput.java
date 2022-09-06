@@ -211,7 +211,8 @@ public class Uput implements Serializable, GeneralDObject {
      */
     @Override
     public String setAtrValue() {
-        return "sifra_uputa=" + sifraUputa + ", datum_uputa='" + datumUputa + "', uputna_dijagnoza='"
+    	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        return "sifra_uputa=" + sifraUputa + ", datum_uputa='" + formatter.format(datumUputa) + "', uputna_dijagnoza='"
                 + uputnaDijagnoza + "', sifra_lekara='" + lekar.getUsername() + "', jmbg='"
                 + pacijent.getJmbg() + "'";
     }

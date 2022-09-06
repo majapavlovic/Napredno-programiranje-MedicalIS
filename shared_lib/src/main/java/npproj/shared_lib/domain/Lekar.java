@@ -140,7 +140,7 @@ public class Lekar implements Serializable, GeneralDObject {
     @Override
     public String setAtrValue() {
         return "korisnicko_ime='" + username + "', korisnicka_sifra='" + password +
-                ", ime='" + ime + "', prezime='" + prezime + "'";
+                "', ime='" + ime + "', prezime='" + prezime + "'";
     }
     /**
      * Vraca ime klase Lekar
