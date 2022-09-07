@@ -198,7 +198,7 @@ public class Rezultat implements Serializable, GeneralDObject {
     @Override
     public String toString() {
         return "sifra_rezultata=" + sifra_rezultata + ", rezultat_analize='" + rezultat_analize
-                + "', datum_izdavanja='" + datumIzdavanja + "";
+                + "', datum_izdavanja='" + datumIzdavanja + "'";
     }
 
 }
