@@ -1,0 +1,44 @@
+{
+  "sifraUputa": 25,
+  "datumUputa": "Sep 8, 2022, 9:02:10 PM",
+  "uputnaDijagnoza": "TEST",
+  "lekar": {
+    "username": "majpav",
+    "password": "12345",
+    "ime": "Maja",
+    "prezime": "Pavlovic"
+  },
+  "pacijent": {
+    "jmbg": "1111111111111",
+    "lbo": "15451",
+    "ime": "Nemanja",
+    "prezime": "Nemanjic",
+    "pol": "Muski",
+    "datumRodjenja": "Mar 27, 1999",
+    "adresa": "Bul oslobodjenja 10",
+    "kontaktTelefon": "0638595666",
+    "krvnaGrupa": "A+",
+    "hronicneDijagnoze": "Nema",
+    "lekar": {
+      "username": "majpav",
+      "password": "12345",
+      "ime": "Maja",
+      "prezime": "Pavlovic"
+    },
+    "uputi": []
+  },
+  "analize": [
+    {
+      "vrstaAnalize": "Bakterioloska",
+      "vrstaUzorka": "Bris grla"
+    },
+    {
+      "vrstaAnalize": "Virusoloska",
+      "vrstaUzorka": "Bris grla"
+    },
+    {
+      "vrstaAnalize": "Bakterioloska",
+      "vrstaUzorka": "Sputum"
+    }
+  ]
+}

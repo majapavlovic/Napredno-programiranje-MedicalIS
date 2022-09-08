@@ -4,6 +4,11 @@
  */
 package npproj.medicalis_client.view;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import npproj.medicalis_client.controller.ClientController;
 import npproj.shared_lib.domain.Analiza;
 import npproj.shared_lib.domain.VrsteAnaliza;
@@ -32,7 +37,7 @@ import javax.swing.text.TableView.TableRow;
  * @author Maja
  */
 public class FrmKreiranjeUputa extends javax.swing.JDialog {
-    
+
     Lekar lekar;
     KartonPacijenta pacijent;
     DefaultTableModel tblModel;
@@ -80,6 +85,7 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
         btnDodajAnalizu = new javax.swing.JButton();
         btnObrisiAnalizu = new javax.swing.JButton();
         btnOsvezi = new javax.swing.JButton();
+        btnJson = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -155,6 +161,13 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
             }
         });
 
+        btnJson.setText("Snimi dokument");
+        btnJson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJsonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -164,7 +177,9 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnOsvezi, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(219, 219, 219)
+                        .addGap(136, 136, 136)
+                        .addComponent(btnJson)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKreirajUput, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -203,7 +218,7 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
                                         .addGap(18, 18, 18)
                                         .addComponent(cbAnalize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +252,8 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnKreirajUput, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOsvezi, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnOsvezi, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnJson))
                 .addGap(9, 9, 9))
         );
 
@@ -280,7 +296,7 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
         a.setVrstaAnalize(cbAnalize.getSelectedItem().toString());
         a.setVrstaUzorka(cbUzorci.getSelectedItem().toString());
         analize.add(a);
-        
+
         Object[] row = {cbUzorci.getSelectedItem().toString(), cbAnalize.getSelectedItem().toString()};
         tblModel.addRow(row);
     }//GEN-LAST:event_btnDodajAnalizuActionPerformed
@@ -305,9 +321,36 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
         txtDijagnoza.setText("");
     }//GEN-LAST:event_btnOsveziActionPerformed
 
+    private void btnJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJsonActionPerformed
+        if (txtSifraUputa.getText() != "") {
+        	Long ll = Long.parseLong(txtSifraUputa.getText());
+        	System.out.println(ll);
+            Uput uput = new Uput();
+            uput.setPacijent(pacijent);
+            uput.setAnalize(analize);
+            uput.setLekar(lekar);
+            uput.setDatumUputa(new Date());
+            uput.setUputnaDijagnoza(txtDijagnoza.getText());
+            uput.setSifraUputa(Long.parseLong(txtSifraUputa.getText()));
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            try (PrintWriter out = new PrintWriter(new FileWriter("uput_" + uput.getSifraUputa() + ".json"))) {
+
+                out.print(gson.toJson(uput));
+                
+                JOptionPane.showMessageDialog(this, "Uspesno snimljen dokument: uput_" + uput.getSifraUputa() + ".json");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Morate prvo sacuvati uput!");
+        }
+    }//GEN-LAST:event_btnJsonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDodajAnalizu;
+    private javax.swing.JButton btnJson;
     private javax.swing.JButton btnKreirajUput;
     private javax.swing.JButton btnObrisiAnalizu;
     private javax.swing.JButton btnOsvezi;
