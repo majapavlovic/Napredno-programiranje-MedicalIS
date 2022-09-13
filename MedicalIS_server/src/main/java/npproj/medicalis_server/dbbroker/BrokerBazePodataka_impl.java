@@ -165,7 +165,7 @@ public class BrokerBazePodataka_impl extends BrokerBazePodataka {
             } else {
                 odo = null;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(BrokerBazePodataka_impl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             close(null, st, rs);
@@ -189,7 +189,7 @@ public class BrokerBazePodataka_impl extends BrokerBazePodataka {
             } else {
                 odo = null;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(BrokerBazePodataka_impl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             close(null, st, rs);
@@ -242,7 +242,7 @@ public class BrokerBazePodataka_impl extends BrokerBazePodataka {
                 // } else {
                 //   odo = null;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(BrokerBazePodataka_impl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             close(null, st, rs);
@@ -267,7 +267,7 @@ public class BrokerBazePodataka_impl extends BrokerBazePodataka {
                 // } else {
                 //   odo = null;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(BrokerBazePodataka_impl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             close(null, st, rs);

@@ -12,24 +12,24 @@ import npproj.shared_lib.domain.Analiza;
 import npproj.shared_lib.domain.Laborant;
 import npproj.shared_lib.domain.Rezultat;
 
-class InsertRezultatTest {
+public class InsertRezultatTest {
 	AbstractSO so;
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		so = new InsertRezultat();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		so = null;
 	}
 
 	@Test
-	void testPreconditionWrongParam() {
+	public void testPreconditionWrongParam() {
 		assertThrows(java.lang.Exception.class, () -> so.precondition(null));	
 	}
 	@Test
-	void testPreconditionMissingParam() {
+	public void testPreconditionMissingParam() {
 		Rezultat r = new Rezultat();
 		r.setAnaliza(new Analiza(1l));
 		r.setRezultat_analize("");
@@ -39,7 +39,7 @@ class InsertRezultatTest {
 	}
 
 	@Test
-	void testExecuteOperation() {
+	public void testExecuteOperation() {
 		Rezultat r = new Rezultat();
 		Analiza a = new Analiza(1l);
 		r.setAnaliza(a);

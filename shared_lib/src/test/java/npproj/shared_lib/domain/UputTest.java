@@ -12,54 +12,54 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class UputTest {
+public class UputTest {
 	Uput u;
 	ResultSet rs;
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		u = new Uput();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		u = null;
 	}
 
 	@Test
-	void testSetSifraUputa() {
+	public void testSetSifraUputa() {
 		u.setSifraUputa(1l);
 		assertEquals(1l, u.getSifraUputa());
 	}
 
 	@Test
-	void testSetDatumUputa() {
+	public void testSetDatumUputa() {
 		Date d = new Date(2022 - 1900, 8, 6);
 		u.setDatumUputa(d);
 		assertEquals(d, u.getDatumUputa());
 	}
 
 	@Test
-	void testSetUputnaDijagnoza() {
+	public void testSetUputnaDijagnoza() {
 		u.setUputnaDijagnoza("Bronhitis");
 		assertEquals("Bronhitis", u.getUputnaDijagnoza());
 	}
 
 	@Test
-	void testSetLekar() {
+	public void testSetLekar() {
 		Lekar l = new Lekar("majpav");
 		u.setLekar(l);
 		assertEquals(l, u.getLekar());
 	}
 
 	@Test
-	void testSetPacijent() {
+	public void testSetPacijent() throws Exception {
 		KartonPacijenta p = new KartonPacijenta("2701996556841");
 		u.setPacijent(p);
 		assertEquals(p, u.getPacijent());
 	}
 
 	@Test
-	void testSetAnalize() {
+	public void testSetAnalize() {
 
 		Analiza a1 = new Analiza(1l);
 		a1.setVrstaAnalize("Bakterioloska");
@@ -81,7 +81,7 @@ class UputTest {
 	}
 
 	@Test
-	void testGetAtrValue() {
+	public void testGetAtrValue() throws Exception {
 		u.setSifraUputa(1l);
 		Date d = new Date(2022 - 1900, 8, 6);
 		u.setDatumUputa(d);
@@ -94,7 +94,7 @@ class UputTest {
 	}
 
 	@Test
-	void testSetAtrValue() {
+	public void testSetAtrValue() throws Exception {
 
 		u.setSifraUputa(1l);
 		Date d = new Date(2022 - 1900, 8, 6);
@@ -110,20 +110,20 @@ class UputTest {
 	}
 
 	@Test
-	void testGetWhereCondition() {
+	public void testGetWhereCondition() throws Exception {
 		KartonPacijenta p = new KartonPacijenta("2703996485966");
 		u.setPacijent(p);
 		assertEquals("jmbg = '2703996485966' ORDER BY sifra_uputa DESC", u.getWhereCondition());
 	}
 
 	@Test
-	void testGetNewRecord() {
+	public void testGetNewRecord() {
 		try {
 
 			rs = Mockito.mock(ResultSet.class);
 
 			Mockito.when(rs.getLong("sifra_uputa")).thenReturn(1l);
-			Mockito.when(rs.getDate("datum_uputa")).thenReturn((java.sql.Date) new Date(2022-1900, 8, 6));
+			Mockito.when(rs.getDate("datum_uputa")).thenReturn((java.sql.Date) new java.sql.Date(2022-1900, 8, 6));
 			Mockito.when(rs.getString("uputna_dijagnoza")).thenReturn("Bronhitis");
 			Mockito.when(rs.getString("sifra_lekara")).thenReturn("majpav");
 			Mockito.when(rs.getString("jmbg")).thenReturn("2703996458955");
@@ -145,7 +145,7 @@ class UputTest {
 	}
 
 	@Test
-	void testToString() {
+	public void testToString() throws Exception {
 		u.setSifraUputa(1l);
 		Date d = new Date(2022 - 1900, 8, 6);
 		u.setDatumUputa(d);

@@ -9,28 +9,28 @@ import org.junit.jupiter.api.Test;
 import npproj.shared_lib.domain.KartonPacijenta;
 import npproj.shared_lib.domain.Lekar;
 
-class FindKartonPacijentaTest {
+public class FindKartonPacijentaTest {
 	AbstractSO so;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		so = new FindKartonPacijenta();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		so = null;
 	}
 
 	@Test
-	void testPrecondition() {
+	public void testPrecondition() {
 		assertThrows(java.lang.Exception.class, () -> so.precondition(null));
 	}
 
 	@Test
-	void testExecuteOperation() {
+	public void testExecuteOperation() {
 		try {
-			KartonPacijenta p = new KartonPacijenta("1111111111111");
+			KartonPacijenta p = new KartonPacijenta("2703999715077");
 			Lekar l = new Lekar();
 			l.setUsername("majpav");
 			p.setLekar(l);

@@ -9,26 +9,26 @@ import org.junit.jupiter.api.Test;
 import npproj.shared_lib.domain.Analiza;
 import npproj.shared_lib.domain.Rezultat;
 
-class FindRezultatAnalizeTest {
+public class FindRezultatAnalizeTest {
 	AbstractSO so;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		so = new FindRezultatAnalize();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		so = null;
 	}
 
 	@Test
-	void testPrecondition() {
+	public void testPrecondition() {
 		assertThrows(java.lang.Exception.class, () -> so.precondition(null));
 	}
 
 	@Test
-	void testExecuteOperation() {
+	public void testExecuteOperation() {
 		Analiza a = new Analiza();
 		a.setSifraAnalize(1l);
 		try {

@@ -236,10 +236,10 @@ public class Uput implements Serializable, GeneralDObject {
      * Kreira i vraca novi objekat klase Uput
      * @param rs objekat ResultSet iz kod se izvlace vrednosti atributa novog Uputa
      * @return GeneralDObjekat objekat klase koja implementira interfejs GeneralDObjekat
-     * @throws SQLException ukoliko je doslo do SQL greske
+     * @throws Exception ako je doslo do greske u konstruktoru KartonPacijenta
      */
     @Override
-    public GeneralDObject getNewRecord(ResultSet rs) throws SQLException {
+    public GeneralDObject getNewRecord(ResultSet rs) throws Exception {
         return new Uput(rs.getLong("sifra_uputa"), rs.getDate("datum_uputa"),
                 rs.getString("uputna_dijagnoza"), new Lekar(rs.getString("sifra_lekara")),
                 new KartonPacijenta(rs.getString("jmbg")));

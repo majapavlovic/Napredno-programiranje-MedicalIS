@@ -13,29 +13,29 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class RezultatTest {
+public class RezultatTest {
 	Rezultat r;
 	ResultSet rs;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		r = new Rezultat();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		r=null;
 	}
 
 	@Test
-	void testSetSifra_rezultata() {
+	public void testSetSifra_rezultata() {
 		r.setSifra_rezultata(111l);
 		
 		assertEquals(111l, r.getSifra_rezultata());
 	}
 
 	@Test
-	void testSetAnaliza() {
+	public void testSetAnaliza() {
 		Analiza a = new Analiza(1l);
 		r.setAnaliza(a);
 		
@@ -43,14 +43,14 @@ class RezultatTest {
 	}
 
 	@Test
-	void testSetRezultat_analize() {
+	public void testSetRezultat_analize() {
 		r.setRezultat_analize("Rezultat");
 		
 		assertEquals("Rezultat", r.getRezultat_analize());
 	}
 
 	@Test
-	void testSetDatumIzdavanja() {
+	public void testSetDatumIzdavanja() {
 		Date d = new Date(2022-1900, 8, 3);
 		
 		r.setDatumIzdavanja(d);
@@ -58,7 +58,7 @@ class RezultatTest {
 	}
 
 	@Test
-	void testSetLaborant() {
+	public void testSetLaborant() {
 		Laborant l = new Laborant("majpav");
 		
 		r.setLaborant(l);
@@ -66,7 +66,7 @@ class RezultatTest {
 	}
 
 	@Test
-	void testGetAtrValue() {		
+	public void testGetAtrValue() {		
         r.setSifra_rezultata(1l);
         r.setRezultat_analize("Rezultat");
         Date d = new Date(2022-1900, 8, 3);
@@ -80,7 +80,7 @@ class RezultatTest {
 	}
 
 	@Test
-	void testSetAtrValue() {
+	public void testSetAtrValue() {
 		
 		r.setSifra_rezultata(1l);
         r.setRezultat_analize("Rezultat");
@@ -95,14 +95,14 @@ class RezultatTest {
 	}
 
 	@Test
-	void testGetWhereCondition() {
+	public void testGetWhereCondition() {
 		Analiza a = new Analiza(1l);
 		r.setAnaliza(a);
 		assertEquals("sifra_analize = 1", r.getWhereCondition());
 	}
 
 	@Test
-	void testGetNewRecord() {
+	public void testGetNewRecord() {
 		try {
 
 			rs = Mockito.mock(ResultSet.class);
@@ -130,7 +130,7 @@ class RezultatTest {
 	}
 
 	@Test
-	void testToString() {
+	public void testToString() {
 		r.setSifra_rezultata(1l);
         r.setRezultat_analize("Rezultat");
         Date d = new Date(2022-1900, 8, 3);

@@ -19,7 +19,7 @@ public interface GeneralDObject extends Serializable{
     String getClassName();
     String getWhereCondition();
 
-    GeneralDObject getNewRecord(ResultSet rs) throws SQLException;
+    GeneralDObject getNewRecord(ResultSet rs) throws SQLException, Exception;
 
     public default String getFields() { return "*"; }
 

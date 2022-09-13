@@ -8,26 +8,26 @@ import org.junit.jupiter.api.Test;
 
 import npproj.shared_lib.domain.Laborant;
 
-class FindLaborantTest {
+public class FindLaborantTest {
 	AbstractSO so;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		so = new FindLaborant();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		so = null;
 	}
 
 	@Test
-	void testPrecondition() {
+	public void testPrecondition() {
 		assertThrows(java.lang.Exception.class, () -> so.precondition(null));
 	}
 
 	@Test
-	void testExecuteOperation() {
+	public void testExecuteOperation() {
 		Laborant l = new Laborant();
 		l.setUsername("majpav");
 		try {

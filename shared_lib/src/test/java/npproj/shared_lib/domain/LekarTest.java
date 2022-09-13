@@ -9,46 +9,46 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class LekarTest {
+public class LekarTest {
 	Lekar l;
 	ResultSet rs;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		l = new Lekar();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		l = null;
 	}
 
 	@Test
-	void testSetIme() {
+	public void testSetIme() {
 		l.setIme("Pera");
 		assertEquals("Pera", l.getIme());
 	}
 
 	@Test
-	void testSetPrezime() {
+	public void testSetPrezime() {
 		l.setPrezime("Peric");
 		assertEquals("Peric", l.getPrezime());
 	}
 
 	@Test
-	void testSetUsername() {
+	public void testSetUsername() {
 		l.setUsername("pperic");
 		assertEquals("pperic", l.getUsername());
 	}
 
 	@Test
-	void testSetPassword() {
+	public void testSetPassword() {
 		l.setPassword("pass1234");
 		assertEquals("pass1234", l.getPassword());
 	}
 
 	@Test
-	void testGetAtrValue() {
+	public void testGetAtrValue() {
 		l.setIme("Pera");
 		l.setPrezime("Peric");
 		l.setUsername("pperic");
@@ -58,7 +58,7 @@ class LekarTest {
 	}
 
 	@Test
-	void testSetAtrValue() {
+	public void testSetAtrValue() {
 		l.setIme("Pera");
 		l.setPrezime("Peric");
 		l.setUsername("pperic");
@@ -68,7 +68,7 @@ class LekarTest {
 	}
 
 	@Test
-	void testGetWhereCondition() {
+	public void testGetWhereCondition() {
 		l.setUsername("pperic");
 		l.setPassword("pass1234");
         assertEquals("korisnicko_ime='pperic' AND korisnicka_sifra='pass1234'", l.getWhereCondition());
@@ -76,7 +76,7 @@ class LekarTest {
 	}
 
 	@Test
-	void testGetNewRecord() {
+	public void testGetNewRecord() {
 		try {
 			rs = Mockito.mock(ResultSet.class);
 	
@@ -101,7 +101,7 @@ class LekarTest {
 	}
 
 	@Test
-	void testGetWhereCondition1() {
+	public void testGetWhereCondition1() {
 		l.setUsername("pperic");
 		assertEquals("korisnicko_ime='pperic'", l.getWhereCondition1());
 	}
