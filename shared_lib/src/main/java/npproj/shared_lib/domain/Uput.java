@@ -59,16 +59,22 @@ public class Uput implements Serializable, GeneralDObject {
      * @param lekar lekar koji kreira uput
      * @param pacijent karton pacijenta
      * @param analize lista analiza uputa
+     * @throws Exception ukoliko nisu prosledjeni validni parametri
      */
     public Uput(Long sifraUputa, Date datumUputa, String uputnaDijagnoza, Lekar lekar,
-            KartonPacijenta pacijent, List<Analiza> analize) {
-        this.sifraUputa = sifraUputa;
+            KartonPacijenta pacijent, List<Analiza> analize) throws Exception {
+        if(uputnaDijagnoza.isEmpty()) {
+        	throw new Exception("Morate upisati uputnu dijagnozu!");
+        }
+        if(analize==null || analize.isEmpty()) {
+        	throw new Exception("Morate uneti barem jednu analizu u uput!");
+        }
+    	this.sifraUputa = sifraUputa;
         this.datumUputa = datumUputa;
         this.uputnaDijagnoza = uputnaDijagnoza;
         this.lekar = lekar;
         this.pacijent = pacijent;
         this.analize = analize;
-
     }
 
     /**
@@ -80,9 +86,13 @@ public class Uput implements Serializable, GeneralDObject {
      * @param uputnaDijagnoza uputna dijagnoza uputa
      * @param lekar lekar koji kreira uput
      * @param pacijent karton pacijenta
+     * @throws Exception  ako podaci nisu validni
      */
     public Uput(Long sifraUputa, Date datumUputa, String uputnaDijagnoza,
-            Lekar lekar, KartonPacijenta pacijent) {
+            Lekar lekar, KartonPacijenta pacijent) throws Exception {
+    	  if(uputnaDijagnoza.isEmpty()) {
+          	throw new Exception("Morate upisati uputnu dijagnozu!");
+          }
         this.sifraUputa = sifraUputa;
         this.datumUputa = datumUputa;
         this.uputnaDijagnoza = uputnaDijagnoza;
@@ -96,8 +106,12 @@ public class Uput implements Serializable, GeneralDObject {
      * @param sifraUputa sifra uputa
      * @param datumUputa datum uputa
      * @param uputnaDijagnoza uputna dijagnoza
+     * @throws Exception ako podaci nisu validni
      */
-    public Uput(Long sifraUputa, Date datumUputa, String uputnaDijagnoza) {
+    public Uput(Long sifraUputa, Date datumUputa, String uputnaDijagnoza) throws Exception {
+    	  if(uputnaDijagnoza.isEmpty()) {
+          	throw new Exception("Morate upisati uputnu dijagnozu!");
+          }
         this.sifraUputa = sifraUputa;
         this.datumUputa = datumUputa;
         this.uputnaDijagnoza = uputnaDijagnoza;
@@ -148,8 +162,12 @@ public class Uput implements Serializable, GeneralDObject {
     /**
      * Postavlja uputnu dijagnozu
      * @param uputnaDijagnoza uputna dijagnoza
+     * @throws Exception ako nije uneta vrednost za uputni dijagnozu
      */
-    public void setUputnaDijagnoza(String uputnaDijagnoza) {
+    public void setUputnaDijagnoza(String uputnaDijagnoza) throws Exception {
+    	if (uputnaDijagnoza.isEmpty()) {
+    	     throw new Exception("Morate upisati uputnu dijagnozu!");
+		}
         this.uputnaDijagnoza = uputnaDijagnoza;
     }
     /**

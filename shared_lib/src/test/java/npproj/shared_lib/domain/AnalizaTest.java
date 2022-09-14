@@ -33,9 +33,16 @@ public class AnalizaTest {
 	}
 
 	@Test
-	public void testSetVrstaAnalize() {
+	public void testSetVrstaAnalize() throws Exception {
 		a.setVrstaAnalize("Bakterioloska");
 		assertEquals("Bakterioloska", a.getVrstaAnalize());
+	}
+
+	@Test
+	public void testSetVrstaAnalizeInvalid() {
+		
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> a.setVrstaAnalize("test"));
+		assertEquals("Uneta analiza nije validna!", thrown.getMessage());
 	}
 
 	@Test
@@ -54,7 +61,7 @@ public class AnalizaTest {
 	}
 
 	@Test
-	public void testGetAtrValue() {
+	public void testGetAtrValue() throws Exception {
 		a.setSifraAnalize(1l);
 		a.setVrstaAnalize("Bakterioloska");
 		a.setVrstaUzorka("Bris grla");
@@ -66,7 +73,7 @@ public class AnalizaTest {
 	}
 
 	@Test
-	public void testSetAtrValue() {
+	public void testSetAtrValue() throws Exception {
 		System.out.println(a);
 		a.setSifraAnalize(1l);
 		a.setVrstaAnalize("Bakterioloska");
@@ -114,7 +121,7 @@ public class AnalizaTest {
 	}
 
 	@Test
-	public void testToString() {
+	public void testToString() throws Exception {
 		a.setSifraAnalize(1l);
 		a.setVrstaAnalize("Bakterioloska");
 		a.setVrstaUzorka("Bris grla");

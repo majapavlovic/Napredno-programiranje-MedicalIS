@@ -24,31 +24,53 @@ public class LekarTest {
 	}
 
 	@Test
-	public void testSetIme() {
+	public void testSetIme() throws Exception {
 		l.setIme("Pera");
 		assertEquals("Pera", l.getIme());
 	}
+	@Test
+	public void testSetImeEmpty() throws Exception {
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setIme(""));
+		assertEquals("Ime ne moze biti prazno", thrown.getMessage());
+	}
+
 
 	@Test
-	public void testSetPrezime() {
+	public void testSetPrezime() throws Exception {
 		l.setPrezime("Peric");
 		assertEquals("Peric", l.getPrezime());
 	}
+	
+	@Test
+	public void testSetPrezimeEmpty() throws Exception {
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setPrezime(""));
+		assertEquals("Prezime ne moze biti prazno", thrown.getMessage());
+	}
 
 	@Test
-	public void testSetUsername() {
+	public void testSetUsername() throws Exception {
 		l.setUsername("pperic");
 		assertEquals("pperic", l.getUsername());
 	}
-
 	@Test
-	public void testSetPassword() {
+	public void testSetUsernameEmpty() throws Exception {
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setUsername(""));
+		assertEquals("Username ne moze biti prazan", thrown.getMessage());
+	}
+	@Test
+	public void testSetPassword() throws Exception {
 		l.setPassword("pass1234");
 		assertEquals("pass1234", l.getPassword());
 	}
+	
+	@Test
+	public void testSetPasswordEmpty() throws Exception {
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setPassword(""));
+		assertEquals("Password ne moze biti prazan", thrown.getMessage());
+	}
 
 	@Test
-	public void testGetAtrValue() {
+	public void testGetAtrValue() throws Exception {
 		l.setIme("Pera");
 		l.setPrezime("Peric");
 		l.setUsername("pperic");
@@ -58,7 +80,7 @@ public class LekarTest {
 	}
 
 	@Test
-	public void testSetAtrValue() {
+	public void testSetAtrValue() throws Exception {
 		l.setIme("Pera");
 		l.setPrezime("Peric");
 		l.setUsername("pperic");
@@ -68,7 +90,7 @@ public class LekarTest {
 	}
 
 	@Test
-	public void testGetWhereCondition() {
+	public void testGetWhereCondition() throws Exception {
 		l.setUsername("pperic");
 		l.setPassword("pass1234");
         assertEquals("korisnicko_ime='pperic' AND korisnicka_sifra='pass1234'", l.getWhereCondition());
@@ -101,7 +123,7 @@ public class LekarTest {
 	}
 
 	@Test
-	public void testGetWhereCondition1() {
+	public void testGetWhereCondition1() throws Exception {
 		l.setUsername("pperic");
 		assertEquals("korisnicko_ime='pperic'", l.getWhereCondition1());
 	}

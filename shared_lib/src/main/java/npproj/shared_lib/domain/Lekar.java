@@ -53,8 +53,11 @@ public class Lekar implements Serializable, GeneralDObject {
     /**
      * Konstruktor koji postavlja vrednost parametra username
      * @param username username Lekara
+     * @throws Exception ako je username prazan
      */
-    public Lekar(String username) {
+    public Lekar(String username) throws Exception {
+    	if(username.isEmpty())
+    		throw new Exception("Username ne moze biti prazan!");
         this.username = username;
     }
     /**
@@ -78,8 +81,11 @@ public class Lekar implements Serializable, GeneralDObject {
     /**
      * Postavlja ime lekara
      * @param ime ime lekara
+     * @throws Exception 
      */
-    public void setIme(String ime) {
+    public void setIme(String ime) throws Exception {
+    	if(ime.isEmpty())
+    		throw new Exception("Ime ne moze biti prazno");
         this.ime = ime;
     }
 
@@ -93,8 +99,11 @@ public class Lekar implements Serializable, GeneralDObject {
     /**
      * Postavlja prezime lekara
      * @param prezime prezime lekara
+     * @throws Exception ako je prezime prazno
      */
-    public void setPrezime(String prezime) {
+    public void setPrezime(String prezime) throws Exception {
+    	if(prezime.isEmpty())
+    		throw new Exception("Prezime ne moze biti prazno!");
         this.prezime = prezime;
     }
     /**
@@ -107,8 +116,11 @@ public class Lekar implements Serializable, GeneralDObject {
     /**
      * Postavlja username lekara
      * @param username username lekara
+     * @throws Exception ako je username prazan
      */
-    public void setUsername(String username) {
+    public void setUsername(String username) throws Exception {
+    	if(username.isEmpty())
+    		throw new Exception("Username ne moze biti prazan!");
         this.username = username;
     }
     /**
@@ -121,8 +133,11 @@ public class Lekar implements Serializable, GeneralDObject {
     /**
      * Postavlja password lekara
      * @param password password lekara
+     * @throws Exception 
      */
-    public void setPassword(String password) {
+    public void setPassword(String password) throws Exception {
+    	if(password.isEmpty())
+    		throw new Exception("Password ne moze biti prazan");
         this.password = password;
     }
     /**

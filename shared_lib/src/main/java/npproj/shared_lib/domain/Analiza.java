@@ -7,6 +7,7 @@ package npproj.shared_lib.domain;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Klasa koja predstavlja laboratorijsku analizu
@@ -82,8 +83,13 @@ public class Analiza implements GeneralDObject, Serializable {
     /**
      * Postavlja vrednost atributa vrstaAnalize
      * @param vrstaAnalize nova vrsta analize
+     * @throws Exception ukoliko uneta analiza nije validna
      */
-    public void setVrstaAnalize(String vrstaAnalize) {
+    public void setVrstaAnalize(String vrstaAnalize) throws Exception {
+    	VrsteAnaliza va = new VrsteAnaliza();
+		List<String> lista = va.getAnalize();
+		if(!lista.contains(vrstaAnalize)) 
+			throw new Exception("Uneta analiza nije validna!");
         this.vrstaAnalize = vrstaAnalize;
     }
     /**

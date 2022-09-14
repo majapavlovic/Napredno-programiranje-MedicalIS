@@ -43,13 +43,13 @@ public class InsertUput extends AbstractSO {
         if (param == null || !(param instanceof Uput)) {
             throw new Exception("Niste uneli odgovarajuci parametar!");
         }
-        Uput u = (Uput) param;
-        if (u.getUputnaDijagnoza().isEmpty()) {
-            throw new Exception("Morate upisati uputnu dijagnozu!");
-        }
-        if (u.getAnalize() == null || u.getAnalize().isEmpty()) {
-            throw new Exception("Morate uneti barem jednu analizu u uput!");
-        }
+//        Uput u = (Uput) param;
+//        if (u.getUputnaDijagnoza().isEmpty()) {
+//            throw new Exception("Morate upisati uputnu dijagnozu!");
+//        }
+//        if (u.getAnalize() == null || u.getAnalize().isEmpty()) {
+//            throw new Exception("Morate uneti barem jednu analizu u uput!");
+//        }
 
     }
 

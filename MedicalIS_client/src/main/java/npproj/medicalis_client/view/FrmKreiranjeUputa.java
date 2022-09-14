@@ -143,7 +143,12 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
         btnDodajAnalizu.setText("Dodaj analizu");
         btnDodajAnalizu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDodajAnalizuActionPerformed(evt);
+                try {
+					btnDodajAnalizuActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -291,7 +296,7 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnKreirajUputActionPerformed
 
-    private void btnDodajAnalizuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajAnalizuActionPerformed
+    private void btnDodajAnalizuActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_btnDodajAnalizuActionPerformed
         Analiza a = new Analiza();
         a.setVrstaAnalize(cbAnalize.getSelectedItem().toString());
         a.setVrstaUzorka(cbUzorci.getSelectedItem().toString());
@@ -330,7 +335,12 @@ public class FrmKreiranjeUputa extends javax.swing.JDialog {
             uput.setAnalize(analize);
             uput.setLekar(lekar);
             uput.setDatumUputa(new Date());
-            uput.setUputnaDijagnoza(txtDijagnoza.getText());
+            try {
+				uput.setUputnaDijagnoza(txtDijagnoza.getText());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             uput.setSifraUputa(Long.parseLong(txtSifraUputa.getText()));
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

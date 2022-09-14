@@ -279,7 +279,7 @@ public class KartonPacijentaTest {
 	}
 
 	@Test
-	public void testSetLekar() {
+	public void testSetLekar() throws Exception {
 		Lekar l = new Lekar("majpav");
 		pacijent.setLekar(l);
 		assertEquals(l, pacijent.getLekar());

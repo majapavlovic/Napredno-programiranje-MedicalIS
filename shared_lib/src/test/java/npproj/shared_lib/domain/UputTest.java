@@ -10,6 +10,8 @@ import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mockito;
 
 public class UputTest {
@@ -24,7 +26,23 @@ public class UputTest {
 	public void tearDown() throws Exception {
 		u = null;
 	}
-
+	@Test
+		public void ParametrisedUputDijagnoza() {
+		List<Analiza> analize = new ArrayList<>();
+		analize.add(new Analiza(1l));
+	        Exception thrown = assertThrows(java.lang.Exception.class, () -> new Uput(1l, new Date(), "",
+	        		new Lekar("majpav"), new KartonPacijenta("1234567891234"), analize));
+	        
+	        assertEquals("Morate upisati uputnu dijagnozu!", thrown.getMessage());
+	}
+	@Test
+	public void ParametrisedUputAnalize() {
+        Exception thrown = assertThrows(java.lang.Exception.class, () -> new Uput(1l, new Date(), "Test",
+        		new Lekar("majpav"), new KartonPacijenta("1234567891234"), null));
+        
+        assertEquals("Morate uneti barem jednu analizu u uput!", thrown.getMessage());
+}
+	
 	@Test
 	public void testSetSifraUputa() {
 		u.setSifraUputa(1l);
@@ -39,13 +57,19 @@ public class UputTest {
 	}
 
 	@Test
-	public void testSetUputnaDijagnoza() {
+	public void testSetUputnaDijagnoza() throws Exception {
 		u.setUputnaDijagnoza("Bronhitis");
 		assertEquals("Bronhitis", u.getUputnaDijagnoza());
 	}
 
 	@Test
-	public void testSetLekar() {
+	public void testSetUputnaDijagnozaEmpty() throws Exception {
+		Exception thrown = assertThrows(java.lang.Exception.class, () -> u.setUputnaDijagnoza(""));
+		assertEquals("Morate upisati uputnu dijagnozu!", thrown.getMessage());
+	}
+
+	@Test
+	public void testSetLekar() throws Exception {
 		Lekar l = new Lekar("majpav");
 		u.setLekar(l);
 		assertEquals(l, u.getLekar());
@@ -59,7 +83,7 @@ public class UputTest {
 	}
 
 	@Test
-	public void testSetAnalize() {
+	public void testSetAnalize() throws Exception {
 
 		Analiza a1 = new Analiza(1l);
 		a1.setVrstaAnalize("Bakterioloska");
