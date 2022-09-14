@@ -28,7 +28,7 @@ public class LoginLekarTest {
 	}
 
 	@Test
-	public void testExecuteOperation() {
+	public void testExecuteOperation() throws Exception {
 		Lekar l = new Lekar();
 		l.setUsername("majpav");
 		l.setPassword("12345");

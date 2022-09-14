@@ -129,7 +129,7 @@ public class ClientHandle extends Thread {
         return response;
     }
 
-    private Response sendKartonPacijenta(Request request) {
+    private Response sendKartonPacijenta(Request request) throws Exception {
         Response response = new Response();
         response.setOperation(Operations.GET_PACIJENT);
         KartonPacijenta p = ServerController.getInstance().sendKartonPacijenta(request, lekar);

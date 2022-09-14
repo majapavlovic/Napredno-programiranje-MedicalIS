@@ -85,8 +85,9 @@ public class FindKartonPacijenta extends AbstractSO {
      *
      * @param k karton pacijenta za koji se traze uputi
      * @return lista uputa
+     * @throws Exception ako dodje do greske
      */
-    private List<Uput> findUputi(KartonPacijenta k) {
+    private List<Uput> findUputi(KartonPacijenta k) throws Exception {
         Uput u = new Uput();
         u.setPacijent(k);
         List<GeneralDObject> l = bbp.findAllRecords(u);

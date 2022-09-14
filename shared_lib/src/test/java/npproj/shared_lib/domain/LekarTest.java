@@ -44,7 +44,7 @@ public class LekarTest {
 	@Test
 	public void testSetPrezimeEmpty() throws Exception {
 		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setPrezime(""));
-		assertEquals("Prezime ne moze biti prazno", thrown.getMessage());
+		assertEquals("Prezime ne moze biti prazno!", thrown.getMessage());
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class LekarTest {
 	@Test
 	public void testSetUsernameEmpty() throws Exception {
 		Exception thrown = assertThrows(java.lang.Exception.class, () -> l.setUsername(""));
-		assertEquals("Username ne moze biti prazan", thrown.getMessage());
+		assertEquals("Username ne moze biti prazan!", thrown.getMessage());
 	}
 	@Test
 	public void testSetPassword() throws Exception {

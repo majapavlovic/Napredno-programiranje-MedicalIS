@@ -27,7 +27,7 @@ public class LoginLaborantTest {
 	}
 
 	@Test
-	public void testExecuteOperation() {
+	public void testExecuteOperation() throws Exception {
 		Laborant l = new Laborant();
 		l.setUsername("majpav");
 		l.setPassword("12345");

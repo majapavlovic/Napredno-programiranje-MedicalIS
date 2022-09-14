@@ -85,7 +85,7 @@ public class ServerController {
         return (Lekar) loginLekar.getResult();
     }
 
-    public KartonPacijenta sendKartonPacijenta(Request request, Lekar lekar) {
+    public KartonPacijenta sendKartonPacijenta(Request request, Lekar lekar) throws Exception {
         KartonPacijenta p = (KartonPacijenta) request.getArgument();
         p = (KartonPacijenta) bbp.findRecord(p);
         p.setLekar(lekar);
