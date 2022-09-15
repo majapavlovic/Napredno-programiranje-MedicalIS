@@ -1,18 +1,15 @@
-/MedicalIS_client/dist/
-/MedicalIS_client/nbproject/private/
-/MedicalIS_server/nbproject/private/
-/shared_lib/nbproject/private/
 MedicalIS_client/target/
 MedicalIS_server/target/
 shared_lib/target/
-MedicalIS_client/.classpath
-MedicalIS_client/.project
+
 MedicalIS_client/.settings/
-MedicalIS_server/.classpath
-MedicalIS_server/.project
 MedicalIS_server/.settings/
-MedicalIS_server/bin
-shared_lib/.classpath
-shared_lib/.project
 shared_lib/.settings/
 
+MedicalIS_client/.project
+MedicalIS_server/.project
+shared_lib/.project
+
+MedicalIS_client/.classpath
+MedicalIS_server/.classpath
+shared_lib/.classpath
